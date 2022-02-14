@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WypozyczalniaBack
+namespace BWypozyczalniaBack
 {
     public class WypozyczalniaClients
     {
@@ -17,7 +17,7 @@ namespace WypozyczalniaBack
         private void CreateClients()
         {
             Clients.Add(new Client(1, "Jan Nowak", new DateTime(04 / 03 / 2021)));
-            Clients.Add(new Client(2, "Agnieszka Kowalska", new DateTime(15 / 01 / 1999)));
+            Clients.Add(new Client(2, "Agnieszka Kowalska", new DateTime(15/01/1999)));
             Clients.Add(new Client(3, "Robert Lewandowski", new DateTime(18 / 12 / 2010)));
             Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(29 / 04 / 2020)));
             Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(12 / 07 / 2015)));

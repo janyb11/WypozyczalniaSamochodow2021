@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Backend
+namespace BWypozyczalniaBack
 {
     internal class Program
     {

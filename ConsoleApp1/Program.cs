@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Frontend
+namespace AWypozyczalniaFront
 {
     internal class Program
     {

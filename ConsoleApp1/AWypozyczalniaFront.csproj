@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Backend\WypozyczalniaBack.csproj" />
+    <ProjectReference Include="..\Backend\BWypozyczalniaBack.csproj" />
   </ItemGroup>
 
 </Project>
