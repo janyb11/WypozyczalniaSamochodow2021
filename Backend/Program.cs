@@ -6,7 +6,7 @@ namespace Backend
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+             
         }
     }
 }

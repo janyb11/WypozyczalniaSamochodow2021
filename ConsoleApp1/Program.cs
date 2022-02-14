@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace Frontend
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Ekran.PokazOpcje();
+            
         }
     }
 }
