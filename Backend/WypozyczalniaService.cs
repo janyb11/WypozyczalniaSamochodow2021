@@ -16,11 +16,11 @@ namespace BWypozyczalniaBack
 
         private void CreateClients()
         {
-            Clients.Add(new Client(1, "Jan Nowak", new DateTime(04 / 03 / 2021)));
-            Clients.Add(new Client(2, "Agnieszka Kowalska", new DateTime(15/01/1999)));
-            Clients.Add(new Client(3, "Robert Lewandowski", new DateTime(18 / 12 / 2010)));
-            Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(29 / 04 / 2020)));
-            Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(12 / 07 / 2015)));
+            Clients.Add(new Client(1, "Jan Nowak", new DateTime(2021,03,04)));
+            Clients.Add(new Client(2, "Agnieszka Kowalska", new DateTime(1999,01,15)));
+            Clients.Add(new Client(3, "Robert Lewandowski", new DateTime(2010,12,18)));
+            Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(2020,04,29)));
+            Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(2015,07,12)));
         }
     }
     public class WypozyczalniaCars

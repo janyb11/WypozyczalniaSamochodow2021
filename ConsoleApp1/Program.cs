@@ -1,4 +1,5 @@
 ﻿using System;
+using AWypozyczalniaFront;
 
 namespace AWypozyczalniaFront
 {
@@ -6,8 +7,8 @@ namespace AWypozyczalniaFront
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             Ekran.PokazOpcje();
-            
         }
     }
 }
