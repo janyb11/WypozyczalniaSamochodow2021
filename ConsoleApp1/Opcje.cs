@@ -19,7 +19,16 @@ namespace AWypozyczalniaFront
             Ekran.PokazOpcje();
         }
 
+        
+
         public static void Trzy()
+        {
+            Console.Clear();
+            Ekran.PokazOpcje();
+        }
+
+
+        public static void Cztery()
         {
             Environment.Exit(0);
         }

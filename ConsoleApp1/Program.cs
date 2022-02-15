@@ -7,6 +7,8 @@ namespace AWypozyczalniaFront
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.Clear();
             Ekran.PokazOpcje();
         }

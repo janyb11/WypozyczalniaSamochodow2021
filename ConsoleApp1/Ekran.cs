@@ -12,15 +12,16 @@ namespace AWypozyczalniaFront
     {
         public static void PokazOpcje()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Wybierz opcję:");
             Console.WriteLine("1 => Lista klientów i samochodów ");
             Console.WriteLine("2 => Wypożyczenie samochodu");
-            Console.WriteLine("3 => Zakończ Program");
-            Console.WriteLine("Wybierz 1,2 lub 3:");
+            Console.WriteLine("3 => Menu główne");
+            Console.WriteLine("4 => Zakończ Program");
+            Console.WriteLine("Wybierz 1,2,3 lub 4:");
             WybierzOpcje();            
         }
+
+        
         public static void WybierzOpcje()
         {
 
@@ -28,16 +29,15 @@ namespace AWypozyczalniaFront
 
             if (klawisz == "1")
                 Opcje.Jeden();
-            else if (klawisz == "2")
-                Console.WriteLine("haha");
             else if (klawisz == "3")
                 Opcje.Trzy();
+            else if (klawisz == "4")
+                Opcje.Cztery();
             else
                 Console.WriteLine("Zły klawisz");
             System.Threading.Thread.Sleep(1000);
             Console.Clear();
             PokazOpcje();
-            WybierzOpcje();
            
 
         }
