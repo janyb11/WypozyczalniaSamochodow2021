@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AWypozyczalniaFront;
-using BWypozyczalniaBack;
+using WypozyczalniaFront;
+using WypozyczalniaBack;
 
-namespace AWypozyczalniaFront
+namespace WypozyczalniaFront
 {
     internal class Opcje
     {
@@ -19,19 +19,15 @@ namespace AWypozyczalniaFront
             Console.WriteLine();
             Ekran.PokazOpcje();
         }
-
         public static void Dwa()
         {
-            KalkulatorScreen.WypozyczalniaKalkulator();
+            Kalkulator.WypozyczalniaKalkulator();
         }
-
         public static void Trzy()
         {
             Console.Clear();
             Ekran.PokazOpcje();
         }
-
-
         public static void Cztery()
         {
             Environment.Exit(0);

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BWypozyczalniaBack
+namespace WypozyczalniaBack
 {
     internal class Program
     {

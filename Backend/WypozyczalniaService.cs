@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BWypozyczalniaBack
+namespace WypozyczalniaBack
 {
     public class WypozyczalniaClients
     {
@@ -13,7 +13,6 @@ namespace BWypozyczalniaBack
             CreateClients();
         }
         public List<Client> Clients { get; set; } = new List<Client>();
-
         private void CreateClients()
         {
             Clients.Add(new Client(1, "Jan Nowak", new DateTime(2021,03,04)));
@@ -22,7 +21,6 @@ namespace BWypozyczalniaBack
             Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(2020,04,29)));
             Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(2015,07,12)));
         }
-
         public Client getClientById(int id)
         {
               foreach (var client in this.Clients)
@@ -33,8 +31,7 @@ namespace BWypozyczalniaBack
               return null;
         }
 
-    }
-    
+    }   
     public class WypozyczalniaCars
     {
         public WypozyczalniaCars()

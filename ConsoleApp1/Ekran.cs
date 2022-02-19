@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BWypozyczalniaBack;
-using AWypozyczalniaFront;
+using WypozyczalniaBack;
+using WypozyczalniaFront;
 
-namespace AWypozyczalniaFront
+namespace WypozyczalniaFront
 {
     public static class Ekran
     {
@@ -19,29 +19,46 @@ namespace AWypozyczalniaFront
             Console.WriteLine("4 => Zakończ Program");
             Console.WriteLine("Wybierz 1,2,3 lub 4:");
             WybierzOpcje();            
-        }
-
-        
+        }  
         public static void WybierzOpcje()
         {
 
             string klawisz = Console.ReadLine();
-
-            if (klawisz == "1")
-                Opcje.Jeden();
-            else if (klawisz == "2")
-                Opcje.Dwa();
-            else if (klawisz == "3")
-                Opcje.Trzy();
-            else if (klawisz == "4")
-                Opcje.Cztery();
-            else
-                Console.WriteLine("Zły klawisz");
-            //System.Threading.Thread.Sleep(5000);
-            //Console.Clear();
-            //PokazOpcje();
-           
-
+            while (true)
+            {
+                int value;
+                if (int.TryParse(klawisz,out value))
+                {
+                    switch (value)
+                    {
+                        case 1:
+                            Opcje.Jeden();
+                            break;
+                        case 2:
+                            Opcje.Dwa();
+                            break;
+                        case 3:
+                            Opcje.Trzy();
+                            break;
+                        case 4:
+                            Opcje.Cztery();
+                            break;
+                        default:
+                            Console.WriteLine("Zły klawisz");
+                            System.Threading.Thread.Sleep(500);
+                            Console.Clear();
+                            PokazOpcje();
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nieprawidłowy input.");
+                    System.Threading.Thread.Sleep(500);
+                    Console.Clear();
+                    PokazOpcje();
+                }
+            }
         }
         public static void PokazKlientow()
         {

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BWypozyczalniaBack;
-using AWypozyczalniaFront;
+using WypozyczalniaBack;
+using WypozyczalniaFront;
 
-namespace BWypozyczalniaBack
+namespace WypozyczalniaBack
 {
-    public class KalkulatorScreen
+    public class Kalkulator
     {
         public static void WypozyczalniaKalkulator()
         {
@@ -47,6 +47,7 @@ namespace BWypozyczalniaBack
             Console.Clear();
             Console.WriteLine("1. Mini");
             Console.WriteLine("2. Kompakt");
+            string Segment = null;
             var someDate = DateTime.Now;
             var someDate1 = WybranyKlient.PrawoJazdy.Date;
             int difference = someDate.Year - someDate1.Year;
@@ -54,9 +55,7 @@ namespace BWypozyczalniaBack
             {
                 Console.WriteLine("3. Premium");
             }
-
             Console.WriteLine("Podaj segment samochodu: ");
-            string Segment = null;
             bool dobryInput = false;
             while (!dobryInput)
             {
@@ -87,8 +86,9 @@ namespace BWypozyczalniaBack
                         default:
                             Console.WriteLine("Opcja o danym numerze nie istnieje.");
                             System.Threading.Thread.Sleep(500);
+                            Console.Clear();
                             printOpcjeSegment(WybranyKlient);
-                            return;
+                            break;
 
                     }
                 }
@@ -96,8 +96,8 @@ namespace BWypozyczalniaBack
                 {
                     Console.WriteLine("Niepoprawny input");
                     System.Threading.Thread.Sleep(500);
+                    Console.Clear();
                     printOpcjeSegment(WybranyKlient);
-                    return;
                 }
             }
             Console.Clear();
@@ -172,9 +172,9 @@ namespace BWypozyczalniaBack
                     Console.Clear();
                     Console.WriteLine("Auto o danych parametrach nie znajduję się w naszej przechowywalni, prosze wybrać ponownie: ");
                     System.Threading.Thread.Sleep(2000);
-                    printWyborSegment(WybranyKlient);
-                    printWyborPaliwo();
-                    break;
+                    printWyborSegment(WybranyKlient,ref Segment);
+                    printWyborPaliwo(ref TypPaliwa);
+                    
                 }
                 else
                 {
@@ -184,7 +184,7 @@ namespace BWypozyczalniaBack
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
             DateTime today = DateTime.Now;
-            Console.WriteLine("Umowa wynajmu pojazdu");
+            Console.WriteLine("UMOWA WYNAJMU POJAZDU");
             Console.WriteLine();
             Console.WriteLine($"{today.ToShortDateString()}");
             Console.WriteLine();
@@ -246,7 +246,7 @@ namespace BWypozyczalniaBack
             Console.WriteLine("Podaj preferowany rodzaj paliwa: ");
         }
 
-        public static void printWyborSegment(Client WybranyKlient)
+        public static void printWyborSegment(Client WybranyKlient,ref string Segment)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
@@ -261,7 +261,6 @@ namespace BWypozyczalniaBack
             }
 
             Console.WriteLine("Podaj segment samochodu: ");
-            string Segment = null;
             bool dobryInput = false;
             while (!dobryInput)
             {
@@ -306,13 +305,12 @@ namespace BWypozyczalniaBack
                 }
             }
         }
-        public static void printWyborPaliwo()
+        public static void printWyborPaliwo(ref string TypPaliwa)
         {   Console.Clear();
             Console.WriteLine("1. Benzyna");
             Console.WriteLine("2. Elektryczny");
             Console.WriteLine("3. Diesel");
             Console.WriteLine("Podaj preferowany rodzaj paliwa: ");
-            string TypPaliwa = null;
             bool dobryInput = false;
             while (!dobryInput)
             {

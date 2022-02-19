@@ -1,7 +1,7 @@
 ﻿using System;
-using AWypozyczalniaFront;
+using WypozyczalniaFront;
 
-namespace AWypozyczalniaFront
+namespace WypozyczalniaFront
 {
     internal class Program
     {
