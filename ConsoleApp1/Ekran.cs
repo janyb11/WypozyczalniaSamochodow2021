@@ -13,10 +13,15 @@ namespace WypozyczalniaFront
         public static void PokazOpcje()
         {
             Console.WriteLine("Wybierz opcję:");
+            Console.WriteLine();
             Console.WriteLine("1 => Lista klientów i samochodów ");
+            Console.WriteLine();
             Console.WriteLine("2 => Wypożyczenie samochodu");
+            Console.WriteLine();
             Console.WriteLine("3 => Menu główne");
+            Console.WriteLine();
             Console.WriteLine("4 => Zakończ Program");
+            Console.WriteLine();
             Console.WriteLine("Wybierz 1,2,3 lub 4:");
             WybierzOpcje();            
         }  

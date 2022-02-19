@@ -186,7 +186,7 @@ namespace WypozyczalniaBack
             DateTime today = DateTime.Now;
             Console.WriteLine("UMOWA WYNAJMU POJAZDU");
             Console.WriteLine();
-            Console.WriteLine($"{today.ToShortDateString()}");
+            Console.WriteLine($"Data zawarcia: {today.ToShortDateString()}");
             Console.WriteLine();
             Console.WriteLine(("").PadRight(24, '-'));
             Console.WriteLine();
