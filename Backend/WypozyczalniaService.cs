@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BWypozyczalniaBack
+namespace WypozyczalniaBack
 {
     public class WypozyczalniaClients
     {
@@ -13,7 +13,6 @@ namespace BWypozyczalniaBack
             CreateClients();
         }
         public List<Client> Clients { get; set; } = new List<Client>();
-
         private void CreateClients()
         {
             Clients.Add(new Client(1, "Jan Nowak", new DateTime(2021,03,04)));
@@ -22,7 +21,17 @@ namespace BWypozyczalniaBack
             Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(2020,04,29)));
             Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(2015,07,12)));
         }
-    }
+        public Client getClientById(int id)
+        {
+              foreach (var client in this.Clients)
+              {
+                   if (id == client.ClientId)
+                   return client;
+              }
+              return null;
+        }
+
+    }   
     public class WypozyczalniaCars
     {
         public WypozyczalniaCars()
@@ -42,6 +51,18 @@ namespace BWypozyczalniaBack
             Cars.Add(new Car(8, "Audi A6 Allroad", "premium", "diesel ", 290m));
             Cars.Add(new Car(9, "Mercedes E270 AMG", "premium", "benzyna", 320m));
             Cars.Add(new Car(10, "Tesla Model S", "premium", "elektryczny", 350m));
+        }
+        public Car getCarBySegmentPaliwo(string Segment, string TypPaliwa)
+        {
+                foreach (var car in this.Cars)
+                {
+                    if (Segment == car.Segment)
+                    {
+                        if (TypPaliwa == car.Paliwo)
+                            return car;
+                    }
+                }
+                return null;
         }
     }
 }

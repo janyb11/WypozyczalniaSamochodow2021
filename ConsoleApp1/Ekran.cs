@@ -3,61 +3,85 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BWypozyczalniaBack;
-using AWypozyczalniaFront;
+using WypozyczalniaBack;
+using WypozyczalniaFront;
 
-namespace AWypozyczalniaFront
+namespace WypozyczalniaFront
 {
     public static class Ekran
     {
         public static void PokazOpcje()
         {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("Wybierz opcję:");
-            Console.WriteLine("1 => Lista klientów i samochodów ");
-            Console.WriteLine("2 => Wypożyczenie samochodu");
-            Console.WriteLine("3 => Zakończ Program");
-            Console.WriteLine("Wybierz 1,2 lub 3:");
+            Console.WriteLine("Wybierz opcję: \n" +
+                "\n" +
+                "1 => Lista klientów i samochodów\n" +
+                "\n" +
+                "2 => Wypożyczenie samochodu\n" +
+                "\n" +
+                "3 => Menu główne\n" +
+                "\n" +
+                "4 => Zakończ program\n" +
+                "\n" +
+                "Wybierz 1,2,3 lub 4:");
             WybierzOpcje();            
-        }
+        }  
         public static void WybierzOpcje()
         {
 
             string klawisz = Console.ReadLine();
-
-            if (klawisz == "1")
-                Opcje.Jeden();
-            else if (klawisz == "2")
-                Console.WriteLine("haha");
-            else if (klawisz == "3")
-                Opcje.Trzy();
-            else
-                Console.WriteLine("Zły klawisz");
-            System.Threading.Thread.Sleep(1000);
-            Console.Clear();
-            PokazOpcje();
-            WybierzOpcje();
-           
-
+            while (true)
+            {
+                int value;
+                if (int.TryParse(klawisz,out value))
+                {
+                    switch (value)
+                    {
+                        case 1:
+                            Opcje.Jeden();
+                            break;
+                        case 2:
+                            Opcje.Dwa();
+                            break;
+                        case 3:
+                            Opcje.Trzy();
+                            break;
+                        case 4:
+                            Opcje.Cztery();
+                            break;
+                        default:
+                            Console.WriteLine("Zły klawisz");
+                            System.Threading.Thread.Sleep(500);
+                            Console.Clear();
+                            PokazOpcje();
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Nieprawidłowy input.");
+                    System.Threading.Thread.Sleep(500);
+                    Console.Clear();
+                    PokazOpcje();
+                }
+            }
         }
         public static void PokazKlientow()
         {
-            Console.WriteLine("Lista klientów:");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
-            Console.WriteLine("|{0,-5}|{1,-25}|{2,-20}","Id","Imię i nazwisko","Data wydania prawa jazdy");
+            Console.WriteLine("Lista klientów: \n" +
+                "\n" +
+                ("").PadRight(24, '-') +
+                "");
+            Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}","Id","Imię i nazwisko","Data wydania prawa jazdy"));
             WypozyczalniaClients clients = new WypozyczalniaClients();
             foreach (var client in clients.Clients)
             {
-                Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}",$"{client.ClientId} ", $"{client.FullName} ", $"{client.PrawoJazdy.ToString("MM/dd/yyyy")}"));
+                Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}",$"{client.ClientId} ", $"{client.FullName} ", $"{client.PrawoJazdy.ToShortDateString()}"));
             }
-            Console.WriteLine();
-            Console.WriteLine("Lista samochodów:");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("\n" +
+                "Lista samochodów: \n" +
+                "\n" +
+                ("").PadRight(24, '-') +
+                "");
             Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}|{3,-20}|{4,-20}", "Id", "Model", "Segment", "Rodzaj Paliwa", "Cena za dobę"));
             WypozyczalniaCars cars = new WypozyczalniaCars();
             foreach (var Car in cars.Cars)

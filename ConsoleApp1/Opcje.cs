@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AWypozyczalniaFront;
+using WypozyczalniaFront;
+using WypozyczalniaBack;
 
-namespace AWypozyczalniaFront
+namespace WypozyczalniaFront
 {
     internal class Opcje
     {
@@ -13,13 +14,21 @@ namespace AWypozyczalniaFront
         {
             Console.Clear();
             Ekran.PokazKlientow();
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("\n" +
+                ("").PadRight(24, '-') +
+                "");
             Ekran.PokazOpcje();
         }
-
+        public static void Dwa()
+        {
+            Kalkulator.WypozyczalniaKalkulator();
+        }
         public static void Trzy()
+        {
+            Console.Clear();
+            Ekran.PokazOpcje();
+        }
+        public static void Cztery()
         {
             Environment.Exit(0);
         }
