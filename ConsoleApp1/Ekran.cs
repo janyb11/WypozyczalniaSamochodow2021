@@ -29,6 +29,8 @@ namespace AWypozyczalniaFront
 
             if (klawisz == "1")
                 Opcje.Jeden();
+            else if (klawisz == "2")
+                Opcje.Dwa();
             else if (klawisz == "3")
                 Opcje.Trzy();
             else if (klawisz == "4")
@@ -47,11 +49,11 @@ namespace AWypozyczalniaFront
             Console.WriteLine();
             Console.WriteLine(("").PadRight(24, '-'));
             Console.WriteLine();
-            Console.WriteLine("|{0,-5}|{1,-25}|{2,-20}","Id","Imię i nazwisko","Data wydania prawa jazdy");
+            Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}","Id","Imię i nazwisko","Data wydania prawa jazdy"));
             WypozyczalniaClients clients = new WypozyczalniaClients();
             foreach (var client in clients.Clients)
             {
-                Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}",$"{client.ClientId} ", $"{client.FullName} ", $"{client.PrawoJazdy.ToString("MM/dd/yyyy")}"));
+                Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}",$"{client.ClientId} ", $"{client.FullName} ", $"{client.PrawoJazdy.ToShortDateString()}"));
             }
             Console.WriteLine();
             Console.WriteLine("Lista samochodów:");

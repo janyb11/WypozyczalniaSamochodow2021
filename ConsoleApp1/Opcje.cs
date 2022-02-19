@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AWypozyczalniaFront;
+using BWypozyczalniaBack;
 
 namespace AWypozyczalniaFront
 {
@@ -19,7 +20,10 @@ namespace AWypozyczalniaFront
             Ekran.PokazOpcje();
         }
 
-        
+        public static void Dwa()
+        {
+            KalkulatorScreen.WypozyczalniaKalkulator();
+        }
 
         public static void Trzy()
         {

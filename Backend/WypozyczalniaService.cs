@@ -22,7 +22,19 @@ namespace BWypozyczalniaBack
             Clients.Add(new Client(4, "Zofia Plucińska", new DateTime(2020,04,29)));
             Clients.Add(new Client(5, "Grzegorz Braun", new DateTime(2015,07,12)));
         }
+
+        public Client getClientById(int id)
+        {
+              foreach (var client in this.Clients)
+              {
+                   if (id == client.ClientId)
+                   return client;
+              }
+              return null;
+        }
+
     }
+    
     public class WypozyczalniaCars
     {
         public WypozyczalniaCars()
@@ -42,6 +54,19 @@ namespace BWypozyczalniaBack
             Cars.Add(new Car(8, "Audi A6 Allroad", "premium", "diesel ", 290m));
             Cars.Add(new Car(9, "Mercedes E270 AMG", "premium", "benzyna", 320m));
             Cars.Add(new Car(10, "Tesla Model S", "premium", "elektryczny", 350m));
+        }
+        public Car getCarBySegmentPaliwo(string Segmenta, string TypPaliwaa)
+        {
+            foreach (var cars in Cars)
+            {
+                if (Segmenta == cars.Segment)
+                {
+                    if (TypPaliwaa == cars.Paliwo)
+                    return cars;
+                }
+                return null;
+            }
+            return null;
         }
     }
 }
