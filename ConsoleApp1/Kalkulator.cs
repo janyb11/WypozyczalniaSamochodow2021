@@ -45,9 +45,9 @@ namespace WypozyczalniaBack
                 }
             }
             Console.Clear();
-            Console.WriteLine("1. Mini");
-            Console.WriteLine("2. Kompakt");
-            string Segment = null;
+            Console.WriteLine("1. Mini \n" +
+                "2. Kompakt");
+            string Segment = "";
             var someDate = DateTime.Now;
             var someDate1 = WybranyKlient.PrawoJazdy.Date;
             int difference = someDate.Year - someDate1.Year;
@@ -101,11 +101,11 @@ namespace WypozyczalniaBack
                 }
             }
             Console.Clear();
-            Console.WriteLine("1. Benzyna");
-            Console.WriteLine("2. Elektryczny");
-            Console.WriteLine("3. Diesel");
-            Console.WriteLine("Podaj preferowany rodzaj paliwa: ");
-            string TypPaliwa = null;
+            Console.WriteLine("1. Benzyna \n" +
+                "2. Elektryczny \n" +
+                "3. Diesel \n" +
+                "Podaj preferowany rodzaj paliwa: ");
+            string TypPaliwa = "";
             dobryInput = false;
             while (!dobryInput)
             {
@@ -184,22 +184,22 @@ namespace WypozyczalniaBack
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
             DateTime today = DateTime.Now;
-            Console.WriteLine("UMOWA WYNAJMU POJAZDU");
-            Console.WriteLine();
-            Console.WriteLine($"Data zawarcia: {today.ToShortDateString()}");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
-            Console.WriteLine($"Wynajmujący/a: {WybranyKlient.FullName}");
-            Console.WriteLine();
-            Console.WriteLine($"Rodzaj pojazdu: {WybraneAuto.Marka}");
-            Console.WriteLine();
-            Console.WriteLine($"Rodzaj paliwa: {TypPaliwa}");
-            Console.WriteLine();
-            Console.WriteLine($"Segment: {Segment}");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("UMOWA WYNAJMU POJAZDU \n" +
+                "\n" +
+                $"Data zawarcia: {today.ToShortDateString()}\n" +
+                "\n" +
+                ("").PadRight(24, '-') +
+                "\n" +
+                $"Wynajmujący/a: {WybranyKlient.FullName}\n" +
+                "\n" +
+                $"Rodzaj pojazdu: {WybraneAuto.Marka}\n" +
+                $"\n" +
+                $"Rodzaj paliwa: {TypPaliwa} \n" +
+                $"\n" +
+                $"Segment: {Segment}\n" +
+                $"\n" +
+                ("").PadRight(24, '-') +
+                "");
             int dniWynajmuGratis = 1;
             if (dniWynajmu > 30)
             {
@@ -240,18 +240,18 @@ namespace WypozyczalniaBack
         public static void printOpcjePaliwo()
         {
             Console.Clear();
-            Console.WriteLine("1. Benzyna");
-            Console.WriteLine("2. Elektryczny");
-            Console.WriteLine("3. Diesel");
-            Console.WriteLine("Podaj preferowany rodzaj paliwa: ");
+            Console.WriteLine("1. Benzyna\n" +
+                "2. Elektryczny\n" +
+                "3. Diesel\n" +
+                "Podaj preferowany rodzaj paliwa: ");
         }
 
         public static void printWyborSegment(Client WybranyKlient,ref string Segment)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
-            Console.WriteLine("1. Mini");
-            Console.WriteLine("2. Kompakt");
+            Console.WriteLine("1. Mini\n" +
+                "2. Kompakt");
             var someDate = DateTime.Now;
             var someDate1 = WybranyKlient.PrawoJazdy.Date;
             int difference = someDate.Year - someDate1.Year;
@@ -307,10 +307,10 @@ namespace WypozyczalniaBack
         }
         public static void printWyborPaliwo(ref string TypPaliwa)
         {   Console.Clear();
-            Console.WriteLine("1. Benzyna");
-            Console.WriteLine("2. Elektryczny");
-            Console.WriteLine("3. Diesel");
-            Console.WriteLine("Podaj preferowany rodzaj paliwa: ");
+            Console.WriteLine("1. Benzyna\n" +
+                "2. Elektryczny\n" +
+                "3. Diesel\n" +
+                "Podaj preferowany rodzaj paliwa: ");
             bool dobryInput = false;
             while (!dobryInput)
             {

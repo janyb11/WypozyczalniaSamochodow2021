@@ -12,17 +12,17 @@ namespace WypozyczalniaFront
     {
         public static void PokazOpcje()
         {
-            Console.WriteLine("Wybierz opcję:");
-            Console.WriteLine();
-            Console.WriteLine("1 => Lista klientów i samochodów ");
-            Console.WriteLine();
-            Console.WriteLine("2 => Wypożyczenie samochodu");
-            Console.WriteLine();
-            Console.WriteLine("3 => Menu główne");
-            Console.WriteLine();
-            Console.WriteLine("4 => Zakończ Program");
-            Console.WriteLine();
-            Console.WriteLine("Wybierz 1,2,3 lub 4:");
+            Console.WriteLine("Wybierz opcję: \n" +
+                "\n" +
+                "1 => Lista klientów i samochodów\n" +
+                "\n" +
+                "2 => Wypożyczenie samochodu\n" +
+                "\n" +
+                "3 => Menu główne\n" +
+                "\n" +
+                "4 => Zakończ program\n" +
+                "\n" +
+                "Wybierz 1,2,3 lub 4:");
             WybierzOpcje();            
         }  
         public static void WybierzOpcje()
@@ -67,21 +67,21 @@ namespace WypozyczalniaFront
         }
         public static void PokazKlientow()
         {
-            Console.WriteLine("Lista klientów:");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("Lista klientów: \n" +
+                "\n" +
+                ("").PadRight(24, '-') +
+                "");
             Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}","Id","Imię i nazwisko","Data wydania prawa jazdy"));
             WypozyczalniaClients clients = new WypozyczalniaClients();
             foreach (var client in clients.Clients)
             {
                 Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}",$"{client.ClientId} ", $"{client.FullName} ", $"{client.PrawoJazdy.ToShortDateString()}"));
             }
-            Console.WriteLine();
-            Console.WriteLine("Lista samochodów:");
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("\n" +
+                "Lista samochodów: \n" +
+                "\n" +
+                ("").PadRight(24, '-') +
+                "");
             Console.WriteLine(string.Format("|{0,-5}|{1,-25}|{2,-20}|{3,-20}|{4,-20}", "Id", "Model", "Segment", "Rodzaj Paliwa", "Cena za dobę"));
             WypozyczalniaCars cars = new WypozyczalniaCars();
             foreach (var Car in cars.Cars)

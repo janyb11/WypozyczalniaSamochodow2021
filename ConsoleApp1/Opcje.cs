@@ -14,9 +14,9 @@ namespace WypozyczalniaFront
         {
             Console.Clear();
             Ekran.PokazKlientow();
-            Console.WriteLine();
-            Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine();
+            Console.WriteLine("\n" +
+                ("").PadRight(24, '-') +
+                "");
             Ekran.PokazOpcje();
         }
         public static void Dwa()
