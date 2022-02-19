@@ -55,18 +55,17 @@ namespace BWypozyczalniaBack
             Cars.Add(new Car(9, "Mercedes E270 AMG", "premium", "benzyna", 320m));
             Cars.Add(new Car(10, "Tesla Model S", "premium", "elektryczny", 350m));
         }
-        public Car getCarBySegmentPaliwo(string Segmenta, string TypPaliwaa)
+        public Car getCarBySegmentPaliwo(string Segment, string TypPaliwa)
         {
-            foreach (var cars in Cars)
-            {
-                if (Segmenta == cars.Segment)
+                foreach (var car in this.Cars)
                 {
-                    if (TypPaliwaa == cars.Paliwo)
-                    return cars;
+                    if (Segment == car.Segment)
+                    {
+                        if (TypPaliwa == car.Paliwo)
+                            return car;
+                    }
                 }
                 return null;
-            }
-            return null;
         }
     }
 }

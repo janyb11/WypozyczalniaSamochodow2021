@@ -37,9 +37,9 @@ namespace AWypozyczalniaFront
                 Opcje.Cztery();
             else
                 Console.WriteLine("Zły klawisz");
-            System.Threading.Thread.Sleep(1000);
-            Console.Clear();
-            PokazOpcje();
+            //System.Threading.Thread.Sleep(5000);
+            //Console.Clear();
+            //PokazOpcje();
            
 
         }
